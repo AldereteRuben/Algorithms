@@ -1,22 +1,22 @@
 /**
- * Ordena un arreglo utilizando el algoritmo Bubble Sort.
+ * Sorts an array using the Bubble Sort algorithm.
  *
- * @param {Array} arreglo - El arreglo a ordenar.
- * @returns {Array} - El arreglo ordenado de menor a mayor.
+ * @param {Array} array - The array to be sorted.
+ * @returns {Array} - The sorted array in ascending order.
  */
-const bubbleSort = (arreglo) => {
-    for (let i = 0; i < arreglo.length; i++) {
-        for (let j = 0; j < arreglo.length - i; j++) {
-            if (arreglo[j] > arreglo[j + 1]) {
-                let temp = arreglo[j];
-                arreglo[j] = arreglo[j + 1];
-                arreglo[j + 1] = temp;
+const bubbleSort = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length - i; j++) {
+            if (array[j] > array[j + 1]) {
+                let temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
             }
         }
     }
-    return arreglo;
+    return array;
 }
 
-// Ejemplo de uso:
-const arreglo = [5, 3, 1, 2, 4, 6, 7, 8];
-console.log(bubbleSort(arreglo));
+// Usage example:
+const array = [5, 3, 1, 2, 4, 6, 7, 8];
+console.log(bubbleSort(array));

@@ -1,56 +1,56 @@
 /**
- * Ordena un arreglo utilizando el algoritmo Merge Sort.
+ * Sorts an array using the Merge Sort algorithm.
  *
- * @param {Array} arreglo - El arreglo a ordenar.
- * @returns {Array} - El arreglo ordenado de menor a mayor.
+ * @param {Array} array - The array to be sorted.
+ * @returns {Array} - The sorted array in ascending order.
  */
-const mergeSort = (arreglo) => {
-    if (arreglo.length <= 1) {
-        return arreglo;
+const mergeSort = (array) => {
+    if (array.length <= 1) {
+        return array;
     }
 
-    const mitad = Math.floor(arreglo.length / 2);
-    const izquierda = arreglo.slice(0, mitad);
-    const derecha = arreglo.slice(mitad);
+    const middle = Math.floor(array.length / 2);
+    const left = array.slice(0, middle);
+    const right = array.slice(middle);
 
-    return merge(mergeSort(izquierda), mergeSort(derecha));
+    return merge(mergeSort(left), mergeSort(right));
 }
 
 /**
- * Combina y ordena dos arreglos en uno solo.
+ * Combines and sorts two arrays into a single one.
  *
- * @param {Array} izquierda - El primer arreglo a combinar.
- * @param {Array} derecha - El segundo arreglo a combinar.
- * @returns {Array} - El arreglo combinado y ordenado de menor a mayor.
+ * @param {Array} left - The first array to combine.
+ * @param {Array} right - The second array to combine.
+ * @returns {Array} - The combined and sorted array in ascending order.
  */
-const merge = (izquierda, derecha) => {
-    let ordenado = [];
+const merge = (left, right) => {
+    let merged = [];
     let i = 0;
     let j = 0;
 
-    while (i < izquierda.length && j < derecha.length) {
-        if (izquierda[i] < derecha[j]) {
-            ordenado.push(izquierda[i]);
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            merged.push(left[i]);
             i++;
         } else {
-            ordenado.push(derecha[j]);
+            merged.push(right[j]);
             j++;
         }
     }
 
-    while (i < izquierda.length) {
-        ordenado.push(izquierda[i]);
+    while (i < left.length) {
+        merged.push(left[i]);
         i++;
     }
 
-    while (j < derecha.length) {
-        ordenado.push(derecha[j]);
+    while (j < right.length) {
+        merged.push(right[j]);
         j++;
     }
 
-    return ordenado;
+    return merged;
 }
 
-// Ejemplo de uso:
-const arreglo = [5, 6, 1, 3, 2, 4];
-console.log(mergeSort(arreglo));
+// Usage example:
+const array = [5, 6, 1, 3, 2, 4];
+console.log(mergeSort(array));

@@ -1,42 +1,42 @@
 /**
- * Ordena un arreglo utilizando el algoritmo QuickSort.
- * @param {Array} arreglo - El arreglo a ordenar.
- * @returns {Array} - El arreglo ordenado.
+ * Sorts an array using the QuickSort algorithm.
+ * @param {Array} array - The array to be sorted.
+ * @returns {Array} - The sorted array.
  */
-const quickSort = (arreglo) => {
-    if (arreglo.length <= 1) {
-        return arreglo;
+const quickSort = (array) => {
+    if (array.length <= 1) {
+        return array;
     }
-    let pivote = arreglo[arreglo.length - 1]
-    let { menores, mayores, iguales } = particionar(arreglo, pivote);
+    let pivot = array[array.length - 1];
+    let { less, greater, equal } = partition(array, pivot);
 
-    // Recursivamente ordena los subarreglos menores y mayores,
-    // y los concatena junto con el subarreglo de elementos iguales.
-    return [...quickSort(menores), ...iguales, ...quickSort(mayores)];
+    // Recursively sorts the smaller and greater subarrays,
+    // and concatenates them along with the equal subarray.
+    return [...quickSort(less), ...equal, ...quickSort(greater)];
 }
 
 /**
- * Particiona un arreglo en subarreglos menores, mayores e iguales en base a un pivote.
- * @param {Array} arreglo - El arreglo a particionar.
- * @param {*} pivote - El pivote utilizado para la partición.
- * @returns {Object} - Un objeto que contiene los subarreglos menores, mayores e iguales.
+ * Partitions an array into smaller, greater, and equal subarrays based on a pivot.
+ * @param {Array} array - The array to be partitioned.
+ * @param {*} pivot - The pivot used for partitioning.
+ * @returns {Object} - An object containing the smaller, greater, and equal subarrays.
  */
-const particionar = (arreglo, pivote) => {
-    let menores = [];
-    let mayores = [];
-    let iguales = [];
-    for (let i = 0; i < arreglo.length; i++) {
-        if (pivote > arreglo[i]) {
-            menores.push(arreglo[i]);
-        } else if (pivote < arreglo[i]) {
-            mayores.push(arreglo[i]);
+const partition = (array, pivot) => {
+    let less = [];
+    let greater = [];
+    let equal = [];
+    for (let i = 0; i < array.length; i++) {
+        if (pivot > array[i]) {
+            less.push(array[i]);
+        } else if (pivot < array[i]) {
+            greater.push(array[i]);
         } else {
-            iguales.push(arreglo[i]);
+            equal.push(array[i]);
         }
     }
-    return { menores, mayores, iguales };
+    return { less, greater, equal };
 }
 
-// Ejemplo de uso
-const arreglo = [7, 2, 1, 6, 8, 5, 3, 4];
-console.log(quickSort(arreglo));
+// Usage example:
+const array = [7, 2, 1, 6, 8, 5, 3, 4];
+console.log(quickSort(array));

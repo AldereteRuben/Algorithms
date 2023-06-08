@@ -1,22 +1,22 @@
 /**
- * Ordena un arreglo utilizando el algoritmo Selection Sort.
+ * Sorts an array using the Selection Sort algorithm.
  *
- * @param {Array} arreglo - El arreglo a ordenar.
- * @returns {Array} - El arreglo ordenado de menor a mayor.
+ * @param {Array} array - The array to be sorted.
+ * @returns {Array} - The sorted array in ascending order.
  */
-const selectionSort = (arreglo) => {
-    for (let i = 0; i < arreglo.length; i++) {
-        for (let j = i + 1; j < arreglo.length; j++) {
-            if (arreglo[i] > arreglo[j]) {
-                let temp = arreglo[i];
-                arreglo[i] = arreglo[j];
-                arreglo[j] = temp;
+const selectionSort = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] > array[j]) {
+                let temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
             }
         }
     }
-    return arreglo;
+    return array;
 }
 
-// Ejemplo de uso:
-const arreglo = [7, 3, 5, 1, 9, 2];
-console.log(selectionSort(arreglo));
+// Usage example:
+const array = [7, 3, 5, 1, 9, 2];
+console.log(selectionSort(array));
