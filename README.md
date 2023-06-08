@@ -14,5 +14,6 @@ Below is the basic structure of the repository:
 	 - bubble_sort.js
 	 - insertion_sort.js
 	 - merge_sort.js
+	 - selectionSort.js
 - **searching**
 - **data_structures**
