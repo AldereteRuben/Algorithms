@@ -10,10 +10,11 @@ The repository is organized into folders, each corresponding to a specific area 
 
 Below is the basic structure of the repository:
 
- - **sorts**
+ - **sorting**
 	 - bubble_sort.js
 	 - insertion_sort.js
 	 - merge_sort.js
 	 - selectionSort.js
+	 - quickSort.js
 - **searching**
 - **data_structures**
