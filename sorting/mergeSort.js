@@ -1,8 +1,13 @@
 /**
+ * @namespace sorting
+ */
+
+/**
  * Sorts an array using the Merge Sort algorithm.
  *
  * @param {Array} array - The array to be sorted.
  * @returns {Array} - The sorted array in ascending order.
+ * @memberof sorting
  */
 const mergeSort = (array) => {
     if (array.length <= 1) {
@@ -22,6 +27,7 @@ const mergeSort = (array) => {
  * @param {Array} left - The first array to combine.
  * @param {Array} right - The second array to combine.
  * @returns {Array} - The combined and sorted array in ascending order.
+ * @memberof sorting.mergeSort
  */
 const merge = (left, right) => {
     let merged = [];

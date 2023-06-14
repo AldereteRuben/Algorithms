@@ -1,8 +1,13 @@
 /**
+ * @namespace sorting
+ */
+
+/**
  * Sorts an array using the Selection Sort algorithm.
  *
  * @param {Array} array - The array to be sorted.
  * @returns {Array} - The sorted array in ascending order.
+ * @memberof sorting
  */
 const selectionSort = (array) => {
     for (let i = 0; i < array.length; i++) {

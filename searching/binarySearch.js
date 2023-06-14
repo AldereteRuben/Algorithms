@@ -1,9 +1,14 @@
 /**
+ * @namespace searching
+ */
+
+/**
  * Performs a binary search on a sorted array to determine if a value is present or not.
  *
  * @param {Array} array - The sorted array to perform the search on.
  * @param {*} value - The value to search for in the array.
- * @returns {boolean} - Returns true if the value is present in the array, or false otherwise.
+ * @returns {boolean} Returns true if the value is present in the array, or false otherwise.
+ * @memberof searching
  */
 const binarySearch = (array, value) => {
     let left = 0;
@@ -21,7 +26,7 @@ const binarySearch = (array, value) => {
         }
     }
     return false;
-}
+};
 
 const array = [1, 2, 3, 4, 5, 6];
 console.log(binarySearch(array, 7));

@@ -1,6 +1,7 @@
 /**
  * Creates a new stack.
  * @returns {Object} The stack object with push, pop, peek, isEmpty, and size methods.
+ * @memberof DataStructures
  */
 const createStack = () => {
     const stack = [];

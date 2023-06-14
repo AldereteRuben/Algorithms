@@ -1,0 +1,23 @@
+{
+    "source": {
+        "include": [
+            "sorting",
+            "searching",
+            "data_structures"
+        ],
+        "exclude": [
+            "node_modules"
+        ]
+    },
+    "opts": {
+        "destination": "docs"
+    },
+    "plugins": [],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "recurse": true
+    }
+}

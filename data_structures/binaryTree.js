@@ -1,66 +1,77 @@
-// Definición de la clase Node
-class Node {
-    /**
-     * Constructor de la clase Node.
-     * @param {any} value - Valor del nodo.
-     */
-    constructor(value) {
-        this.data = value;
-        this.left = null;
-        this.right = null;
-    }
-}
+/**
+ * @namespace data_structures
+ */
 
-// Definición de la clase BinaryTree
-class BinaryTree {
-    /**
-     * Constructor de la clase BinaryTree.
-     */
-    constructor() {
-        this.root = null;
-    }
+/**
+ * Creates a new node for the binary tree.
+ * @class
+ * @classdesc Represents a node in the binary tree.
+ * @memberof data_structures.BinaryTree
+ * @param {any} value - The value stored in the node.
+ */
+const Node = (value) => {
+    return {
+        data: value,
+        left: null,
+        right: null,
+    };
+};
+
+/**
+ * Creates a new binary tree.
+ * @class
+ * @classdesc Represents a binary tree.
+ * @memberof data_structures
+ */
+const BinaryTree = () => {
+    let root = null;
 
     /**
-     * Inserta un nuevo nodo en el árbol binario.
-     * @param {any} value - Valor a insertar.
+     * Inserts a new node into the binary tree.
+     * @memberof data_structures.BinaryTree
+     * @param {any} value - The value to insert.
      */
-    insert(value) {
-        if (this.root === null) {
-            this.root = new Node(value);
+    const insert = (value) => {
+        if (root === null) {
+            root = Node(value);
         } else {
-            this.insertRecursive(this.root, value);
+            insertRecursive(root, value);
         }
-    }
+    };
 
     /**
-     * Inserta un nuevo nodo de manera recursiva en el árbol binario.
-     * @param {Node} node - Nodo actual.
-     * @param {any} value - Valor a insertar.
+     * Inserts a new node recursively into the binary tree.
+     * @memberof data_structures.BinaryTree
+     * @param {Node} node - The current node.
+     * @param {any} value - The value to insert.
      */
-    insertRecursive(node, value) {
+    const insertRecursive = (node, value) => {
         if (value < node.data) {
             if (node.left === null) {
-                node.left = new Node(value);
+                node.left = Node(value);
             } else {
-                this.insertRecursive(node.left, value);
+                insertRecursive(node.left, value);
             }
         } else {
             if (node.right === null) {
-                node.right = new Node(value);
+                node.right = Node(value);
             } else {
-                this.insertRecursive(node.right, value);
+                insertRecursive(node.right, value);
             }
         }
-    }
+    };
 
+    return {
+        insert,
+    };
+};
 
-}
+// Example usage
 
-// Ejemplo de uso
-const tree = new BinaryTree();
+// Create a new binary tree
+const tree = BinaryTree();
 tree.insert(5);
 tree.insert(3);
 tree.insert(7);
 tree.insert(1);
 tree.insert(4);
-

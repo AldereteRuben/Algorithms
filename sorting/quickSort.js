@@ -1,7 +1,12 @@
 /**
+ * @namespace sorting
+ */
+
+/**
  * Sorts an array using the QuickSort algorithm.
  * @param {Array} array - The array to be sorted.
  * @returns {Array} - The sorted array.
+ * @memberof sorting
  */
 const quickSort = (array) => {
     if (array.length <= 1) {
@@ -20,6 +25,7 @@ const quickSort = (array) => {
  * @param {Array} array - The array to be partitioned.
  * @param {*} pivot - The pivot used for partitioning.
  * @returns {Object} - An object containing the smaller, greater, and equal subarrays.
+ * @memberof sorting.quickSort
  */
 const partition = (array, pivot) => {
     let less = [];
