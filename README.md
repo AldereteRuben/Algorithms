@@ -17,5 +17,10 @@ Below is the basic structure of the repository:
 	 - selectionSort.js
 	 - quickSort.js
 - **searching**
-	- linearSearch.js 
+	 - linearSearch.js
+	 - binarySearch.js 
 - **data_structures**
+	 - stack.js
+	 - linkedList.js
+	 - binaryTree.js
+	 
